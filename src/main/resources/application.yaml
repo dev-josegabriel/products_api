@@ -6,7 +6,7 @@ spring:
     name: productAPI
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/product_db
+    url: jdbc:mysql://localhost:3307/product_db
     username: ${DB_USER}
     password: ${DB_PASSWORD}
 
