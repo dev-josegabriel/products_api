@@ -5,12 +5,14 @@ import com.josedev.productAPI.dto.ProductDto;
 import com.josedev.productAPI.service.ProductService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/v1/product")
+@Validated
 public class ProductController {
 
     private final ProductService productService;
