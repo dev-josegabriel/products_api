@@ -39,4 +39,16 @@ public class ProductController {
         return productService.save(product);
     }
 
+    @PutMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public ProductEntity update(@PathVariable Long id, @RequestBody @Valid ProductDto product) {
+        return productService.update(id, product);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable Long id) {
+        productService.delete(id);
+    }
+
 }

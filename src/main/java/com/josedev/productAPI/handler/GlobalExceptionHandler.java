@@ -17,7 +17,7 @@ public class GlobalExceptionHandler {
         ErrorResponse error = new ErrorResponse(
                 404,
                 "Not Found",
-                ex.getMessage()
+                "Product not found"
         );
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
     }
@@ -27,7 +27,7 @@ public class GlobalExceptionHandler {
         ErrorResponse error = new ErrorResponse(
                 400,
                 "Bad Request",
-                ex.getMessage()
+                "Bad request"
         );
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
     }

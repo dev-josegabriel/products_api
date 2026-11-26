@@ -33,4 +33,19 @@ public class ProductService {
         return iProductRepository.save(product);
     }
 
+    public ProductEntity update(Long id, ProductDto productDto) {
+        ProductEntity newProduct = findById(id);
+
+        newProduct.setName(productDto.getName());
+        newProduct.setDescription(productDto.getDescription());
+        newProduct.setPrice(productDto.getPrice());
+        newProduct.setStock(productDto.getStock());
+        return iProductRepository.save(newProduct);
+    }
+
+    public void delete(Long id) {
+        ProductEntity product = findById(id);
+        iProductRepository.delete(product);
+    }
+
 }
